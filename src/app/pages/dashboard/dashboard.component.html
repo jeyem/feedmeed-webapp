@@ -1,0 +1,18 @@
+<nb-card>
+  <nb-card-header>
+    Timeline (test)
+  </nb-card-header>
+  <nb-list
+    nbInfiniteList
+    listenWindowScroll
+    [threshold]="500"
+    (bottomThreshold)="loadNext(secondCard)"
+  >
+    <nb-list-item *ngFor="let newsPost of secondCard.news">
+      <nb-news-post [post]="newsPost"></nb-news-post>
+    </nb-list-item>
+    <nb-list-item *ngFor="let _ of secondCard.placeholders">
+      <nb-news-post-placeholder></nb-news-post-placeholder>
+    </nb-list-item>
+  </nb-list>
+</nb-card>
